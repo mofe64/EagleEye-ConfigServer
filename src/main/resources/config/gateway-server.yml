@@ -13,7 +13,6 @@ eureka:
 spring:
   cloud:
     gateway:
-      disovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
+      disovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
