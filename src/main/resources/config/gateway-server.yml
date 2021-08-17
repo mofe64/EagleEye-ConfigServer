@@ -1,10 +1,17 @@
 spring:
   cloud:
     gateway:
-      disovery:
+      discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
+      routes:
+        - id: organization-service
+          uri: lb://organization-service
+          predicates:
+            - Path=/organization/**
+          filters:
+            - RewritePath=/organization/(?<path>.*), /$\{path}
 
 server:
   port: 8072

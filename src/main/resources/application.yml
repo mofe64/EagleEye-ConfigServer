@@ -2,18 +2,18 @@ spring:
   application:
     name: config-server
   profiles:
-    active: git
+    active: native
   cloud:
     config:
       server:
-#        native:
-#          search-locations: classpath:/config
+        native:
+          search-locations: classpath:/config
         git:
           search-paths: src/main/resources/config
           default-label: main
           uri: https://github.com/mofe64/EagleEye-ConfigServer
           username: mofe64
-          password: Zabimaru64@
+          password:
           skipSslValidation: true
 
 server:
